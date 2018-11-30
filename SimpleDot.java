@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class SimpleDot {
 
     private ArrayList<String> locationCells;
+    private String dotName;
     // int hitsTotal;
     // List<Integer> doneGuesses = new ArrayList<Integer>();
 
@@ -11,6 +12,10 @@ public class SimpleDot {
         locationCells = locations;
     }
 
+
+    public void setName(String name) {
+        dotName = name;
+    }
 
     public String checkInput(String strGuess) {
         
@@ -22,6 +27,8 @@ public class SimpleDot {
 
             if (locationCells.isEmpty()) {
                 result = "kill";
+                System.out.println("Killed");
+                System.out.println(dotName + " is done. For good");
             }
 
             else {

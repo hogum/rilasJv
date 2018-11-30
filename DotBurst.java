@@ -50,10 +50,34 @@ public class DotBurst {
 
             if (result.equals("kill")) {
                 dotList.remove(dotToCheck);
+                break;
             }
         }
 
         System.out.println(result);
+    }
+
+    
+    private void finishGame() {
+        System.out.println("Opps! All dots dead");
+
+        if (numOfGuesses <= 18) {
+            System.out.println("Took you " + numOfGuesses + "guesses");
+        }
+
+        else {
+            System.out.println("Took you long enough");
+            System.out.println("The water's making you a laughing face");
+
+        }
+    }
+
+
+    public static void main() {
+
+        DotBurst doDots = new DotBurst();
+        doDots.setUpGame();
+        doDots.startGame();
     }
 
 }
