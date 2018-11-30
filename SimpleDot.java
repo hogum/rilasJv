@@ -6,6 +6,12 @@ public class SimpleDot {
     // int hitsTotal;
     // List<Integer> doneGuesses = new ArrayList<Integer>();
 
+    
+    public void setLocationCells(ArrayList<String> locations) {
+        locationCells = locations;
+    }
+
+
     public String checkInput(String strGuess) {
         
         int cellIndex = locationCells.indexOf(strGuess);
@@ -23,6 +29,11 @@ public class SimpleDot {
             }
 
         }
+
+        System.out.println(result);
+
+        return result;
+
 
         /*for (int cell: locationCells) {
             if (guess == cell) {
@@ -47,18 +58,9 @@ public class SimpleDot {
         if (hitsTotal == locationCells.length) {
             result = "kill";
         }
-
-        System.out.println(result);
-        */
-
-
-        return result;
+            */
     }
 
-
-     public void setLocationCells(ArrayList<String> locations) {
-        locationCells = locations;
-    }
 
     
     /*public boolean contains(final List<Integer> array, final int key) {

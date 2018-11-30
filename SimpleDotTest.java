@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class SimpleDotTest {
     public static void main (String[] args) {
 
@@ -8,11 +10,14 @@ public class SimpleDotTest {
         SimpleDot dot = new SimpleDot();
 
         int startCell = (int) (Math.random() * 4);
+        String cell = Integer.toString(startCell);
 
-        int[] locations = {
-            startCell,
-            startCell + 1,
-            startCell + 2};
+        ArrayList<String> locations = new ArrayList<String> (
+            Arrays.asList(
+            cell,
+            String.valueOf(startCell + 1),
+            String.valueOf(startCell + 2))
+        );
 
         dot.setLocationCells(locations);
 
