@@ -1,19 +1,30 @@
-import java.util.*z;
+import java.util.ArrayList;
 
 public class SimpleDot {
 
-    int[] locationCells;
-    int hitsTotal;
-    List<Integer> doneGuesses = new ArrayList<Integer>();
+    private ArrayList<String> locationCells;
+    // int hitsTotal;
+    // List<Integer> doneGuesses = new ArrayList<Integer>();
 
     public String checkInput(String strGuess) {
-        int guess = Integer.parseInt(strGuess);
-
-
+        
+        int cellIndex = locationCells.indexOf(strGuess);
         String result = "missed";
 
+        if (cellIndex >= 0) {
+            locationCells.remove(cellIndex);
 
-        for (int cell: locationCells) {
+            if (locationCells.isEmpty()) {
+                result = "kill";
+            }
+
+            else {
+                result = "hit";
+            }
+
+        }
+
+        /*for (int cell: locationCells) {
             if (guess == cell) {
                 
                 if (doneGuesses.contains(guess)) {
@@ -38,13 +49,18 @@ public class SimpleDot {
         }
 
         System.out.println(result);
+        */
+
+
         return result;
     }
 
-     public void setLocationCells(int[] locations) {
+
+     public void setLocationCells(ArrayList<String> locations) {
         locationCells = locations;
     }
 
+    
     /*public boolean contains(final List<Integer> array, final int key) {
         for (int a: array) {
             if (a == key) {
