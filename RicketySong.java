@@ -31,7 +31,7 @@ public class RicketySong {
 
             else {
                 System.out.println("Oopsy! You are out of rickets");
-            } 
+            }
         }
     }
 }

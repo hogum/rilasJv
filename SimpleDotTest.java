@@ -3,7 +3,7 @@ public class SimpleDotTest {
 
         int numOfGuesses = 0;
         boolean isAlive = true;
-        Gamehelper helper = new Gamehelper();
+        GameHelper helper = new GameHelper();
 
         SimpleDot dot = new SimpleDot();
 
@@ -17,8 +17,8 @@ public class SimpleDotTest {
         dot.setLocationCells(locations);
 
         while(isAlive) {
-            String userGuess = helper.readGuess.next();
-            String result = dot.checkInput(usserGuess);
+            String userGuess = helper.readGuess();
+            String result = dot.checkInput(userGuess);
             numOfGuesses++;
 
             if (result.equals("kill")) {
