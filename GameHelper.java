@@ -8,7 +8,7 @@ public class GameHelper {
     private int gridSize = 49;
     private int gridLength =7;
     private int [] grid = new int[gridSize];
-    private static final String alphabets = "alphabets";
+    private static final String alphabets = "abcdefg";
 
     // Scanner readUserGuess = new Scanner(System.in);
 
@@ -37,8 +37,7 @@ public class GameHelper {
     }
 
     public ArrayList<String> placeDot (int sizeOfDot) {
-        ArrayList<String> mainCells = new ArrayList<String>();
-        String [] mainCoordinates = new String[sizeOfDot];
+        ArrayList<String> alphaCells = new ArrayList<String>();
         String temp = null;
         boolean done = false;
         int [] coords = new int[sizeOfDot];
@@ -70,12 +69,18 @@ public class GameHelper {
                     if (location >= gridSize) {
                         done = false;
                     }
-                    
-                    else {
-                            System.out.println("Used " + location);
-                            done = false;
+
+                    if (i > 0 && (location % gridLength == 0)) {
+                        done = false;
                     }
+                    
                 }
+                
+                else {
+                        // System.out.println("Used " + location);
+                        done = false;
+                }
+                
             }
         }
             int i = 0; // Turn location to mainCoordinates
@@ -84,17 +89,17 @@ public class GameHelper {
 
             while (i < dotsCount) {
                 grid[coords[i]] = 1; // Mark main grid point as used
-                row = (int) (coords[i]) / gridLength; // Find row value
+                row = (coords[i]) / gridLength; // Find row value
                 column = coords[i] % gridLength;
                 temp = String.valueOf(alphabets.charAt(column)); // convert to alpha
 
-                mainCells.add(temp.concat(Integer.toString(row)));
+                alphaCells.add(temp.concat(Integer.toString(row)));
                 i++;
 
-                System.out.println(" \n coordinate" + i + " = " + mainCells.get(i - 1));
+                System.out.println(" \n coordinate" + i + " = " + alphaCells.get(i - 1));
             }
 
-            return mainCells;
+            return alphaCells;
     }
 
 }

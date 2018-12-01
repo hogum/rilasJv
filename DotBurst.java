@@ -4,12 +4,16 @@ public class DotBurst {
     
     private GameHelper helper = new GameHelper();
     private ArrayList<SimpleDot> dotList = new ArrayList<SimpleDot>();
-    int numOfGuesses = 0;
+    private int numOfGuesses = 0;
 
     private void setUpGame() {
         SimpleDot firstDot = new SimpleDot();
         SimpleDot secondDot = new SimpleDot();
         SimpleDot thirdDot = new SimpleDot();
+
+        firstDot.setName("Thingy Blue");
+        secondDot.setName("Thingy Lost");
+        thirdDot.setName("Thingy Big");
 
         dotList.addAll(
             Arrays.asList(
@@ -73,7 +77,7 @@ public class DotBurst {
     }
 
 
-    public static void main() {
+    public static void main(String[] args) {
 
         DotBurst doDots = new DotBurst();
         doDots.setUpGame();
