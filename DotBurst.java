@@ -11,9 +11,9 @@ public class DotBurst {
         SimpleDot secondDot = new SimpleDot();
         SimpleDot thirdDot = new SimpleDot();
 
-        firstDot.setName("Thingy Blue");
-        secondDot.setName("Thingy Lost");
-        thirdDot.setName("Thingy Big");
+        firstDot.setName("Thingy Boss");
+        secondDot.setName("Thingy Cow");
+        thirdDot.setName("Thingy Blue");
 
         dotList.addAll(
             Arrays.asList(
@@ -53,15 +53,16 @@ public class DotBurst {
             }
 
             if (result.equals("kill")) {
+                dotToCheck.sayDead();
                 dotList.remove(dotToCheck);
                 break;
             }
         }
 
-        System.out.println(result);
+        if (!result.equals("kill"))
+            System.out.println(result);
     }
 
-    
     private void finishGame() {
         System.out.println("Opps! All dots dead");
 

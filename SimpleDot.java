@@ -17,6 +17,12 @@ public class SimpleDot {
         dotName = name;
     }
 
+    public void sayDead () {
+                
+                System.out.println("\nKilled");
+                System.out.println(dotName + " is done. Done for good\n");
+    }
+
     public String checkInput(String strGuess) {
         
         int cellIndex = locationCells.indexOf(strGuess);
@@ -27,8 +33,7 @@ public class SimpleDot {
 
             if (locationCells.isEmpty()) {
                 result = "kill";
-                System.out.println("Killed");
-                System.out.println(dotName + " is done. For good");
+                
             }
 
             else {
@@ -36,8 +41,6 @@ public class SimpleDot {
             }
 
         }
-
-        System.out.println(result);
 
         return result;
 
